@@ -1,0 +1,103 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <title>Very Cool Game fr</title>
+        <style type="text/css">
+            .button {
+                width: 300px;
+                height: 300px;
+                border-radius: 50%;
+                background-color: red;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 24px;
+                color: white;
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            .clicks {
+                margin: auto;
+                width: 200px;
+                height: 50px;
+                border: 5px solid black;
+                border-radius: 50px;
+                text-align: center;
+                padding-top: 2%;
+                padding-bottom: 0.5%;
+                font-size: 20px;
+            }
+
+            .upgradeMenu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 20%;
+                height: 100%;
+                background-color: #fff;
+                box-shadow: 0 0 10px rgba(0,0,0,0.5);
+                z-index: 9999;
+                transition: all 0.5s ease-in-out;
+            }
+
+            .upgradeMenu.active {
+                right: 0;
+            }
+
+            #toggleButton {
+                width: 50px;
+                height: 50px;
+                background-color: black;
+            }
+
+            .Upgrade1 {
+                width: 100px;
+                height: 50px;
+                background-color: black;
+                margin: auto;
+            }
+
+
+
+        </style>
+    </head>
+    <body>
+        <div class="button"> </div>
+        <div class="clicks">clicks: 0</div>
+        <div class="upgradeMenu">
+            <div class="Upgrade1">Upgrade 1</div>
+        </div>
+        <div id="toggleButton"></div>
+
+        <script type="text/javascript">
+            var clicks = 0;
+            var clickRate = 1;
+            var button = document.querySelector(".button");
+            var clicksDisplay = document.querySelector(".clicks");
+
+            const toggleButton = document.getElementById('toggleButton');
+            const upgradeMenu = document.querySelector('.upgradeMenu');
+
+            button.addEventListener("click", function() {
+                clicks += clickRate;
+                clicksDisplay.innerHTML = "Clicks: " + clicks;
+                circle.style.backgroundColor = "#990000";
+                setTimeout(function() {
+                    circle.style.backgroundColor = "red";
+                }, 200);
+		    });
+
+            toggleButton.addEventListener('click', function() {
+                upgradeMenu.classList.toggle('active');
+            });
+
+
+
+
+        </script>
+    </body>
+</html>
